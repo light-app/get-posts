@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BoxerIcon, SpinnerIcon } from "../../Icons";
-import { Progress, Tooltip, Divider, Button } from "antd";
+import { SpinnerIcon } from "../../Icons";
+import { Tooltip, Divider, Button } from "antd";
 import { routeUrl } from "../../constants";
 
 import { observer } from "mobx-react-lite";
@@ -81,12 +81,17 @@ const HomePage = observer(() => {
             {filterPosts.map((post) => {
               return (
                 <div key={post.id} className="post-item">
-                  <Tooltip title={post.title}>
-                    <div className="post-item__title">{post.title}</div>
-                  </Tooltip>
-                  <Divider
-                    style={{ backgroundColor: getRandomColor(), height: "5px" }}
-                  />
+                  <div className="container">
+                    <Tooltip title={post.title}>
+                      <div className="post-item__title">{post.title}</div>
+                    </Tooltip>
+                    <Divider
+                      style={{
+                        backgroundColor: getRandomColor(),
+                        height: "5px",
+                      }}
+                    />
+                  </div>
 
                   <div className="post-item__description">{post.body}</div>
                   <div className="post-item__author">Автор: {post.userId}</div>
