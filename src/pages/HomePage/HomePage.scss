@@ -1,0 +1,70 @@
+@import "../../assets/style-tokens/color-palette";
+
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+
+  &__authors {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background-color: $gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    z-index: 2;
+    border-bottom: 1px solid $light-green;
+  }
+
+  &__posts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 2rem;
+    flex-wrap: wrap;
+    margin-top: 60px;
+
+    .post-item {
+      padding: 2rem;
+      margin: 0 2rem 2rem 0;
+      background-color: $gray;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 300px;
+      height: 400px;
+
+      &__title {
+        width: 100%;
+        font-size: 2rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      &__description {
+        font-size: 1rem;
+      }
+
+      &__author {
+        width: 100%;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: start;
+      }
+
+      a {
+        width: 100%;
+      }
+    }
+  }
+}

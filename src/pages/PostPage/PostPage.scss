@@ -1,0 +1,16 @@
+@import "../../assets/style-tokens/color-palette";
+
+.post-page {
+  height: 100vh;
+  width: 100%;
+  padding: 5rem;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    margin-bottom: 2rem;
+  }
+}
