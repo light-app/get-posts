@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BoxerIcon, SpinnerIcon } from "../../Icons";
 import { Progress, Tooltip, Divider, Button } from "antd";
+import { routeUrl } from "../../constants";
 
 import { observer } from "mobx-react-lite";
 import { useStores } from "./../../hooks/useStores";
@@ -20,6 +21,8 @@ const colorArr = [
   "pink",
   "yellow",
 ];
+
+const link = routeUrl === "" ? "" : routeUrl;
 
 const HomePage = observer(() => {
   const { PostsStore } = useStores();
@@ -87,7 +90,7 @@ const HomePage = observer(() => {
 
                   <div className="post-item__description">{post.body}</div>
                   <div className="post-item__author">Автор: {post.userId}</div>
-                  <Link to={`/post/${post.id}`}>
+                  <Link to={`${link}/post/${post.id}`}>
                     <Button
                       className="btn primary stretched"
                       style={{ backgroundColor: getRandomColor() }}
